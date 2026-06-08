@@ -1201,7 +1201,6 @@ a {
   box-shadow: 0 0 24px rgba(214, 174, 87, 0.25);
 }
 
-
 @media (max-width: 600px) {
   .service-card.active {
     transform: translateY(-8px) scale(1.035) !important;
@@ -1348,7 +1347,6 @@ a {
   object-fit: contain;
 }
 
-
 /* Ajuste para imágenes nuevas del carrusel */
 .carousel-slide img {
   object-position: center;
@@ -1387,27 +1385,70 @@ a {
   background: #08120c;
 }
 
-.lightbox-close {
+.lightbox-close,
+.lightbox-nav {
   position: fixed;
-  top: 18px;
-  right: 20px;
-  width: 48px;
-  height: 48px;
   border-radius: 999px;
   border: 1px solid rgba(214, 174, 87, 0.35);
-  background: rgba(8, 18, 12, 0.9);
+  background: rgba(8, 18, 12, 0.90);
   color: #ffffff;
-  font-size: 34px;
   line-height: 1;
   cursor: pointer;
   z-index: 7100;
   transition: 0.25s ease;
 }
 
-.lightbox-close:hover {
+.lightbox-close {
+  top: 18px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  font-size: 34px;
+}
+
+.lightbox-nav {
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  font-size: 42px;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 22px;
+}
+
+.lightbox-next {
+  right: 22px;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
   background: var(--gold);
   color: #08120c;
+}
+
+.lightbox-close:hover {
   transform: scale(1.05);
+}
+
+.lightbox-nav:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-counter {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 7100;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(8, 18, 12, 0.86);
+  border: 1px solid rgba(214, 174, 87, 0.28);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
 }
 
 .carousel-slide img {
@@ -1431,5 +1472,65 @@ a {
     width: 44px;
     height: 44px;
     font-size: 30px;
+  }
+
+  .lightbox-nav {
+    width: 46px;
+    height: 46px;
+    font-size: 36px;
+    background: rgba(8, 18, 12, 0.78);
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+  .lightbox-counter {
+    bottom: 14px;
+    font-size: 13px;
+  }
+}
+
+/* Mejora del carrusel en celular */
+@media (max-width: 600px) {
+  .carousel-header p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .carousel-viewport {
+    background: rgba(5, 12, 8, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .carousel-slide img {
+    height: 280px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .carousel-slide div {
+    position: static;
+    max-width: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background: rgba(5, 12, 8, 0.92);
+    padding: 18px;
+  }
+
+  .carousel-slide h4 {
+    font-size: 21px;
+    line-height: 1.2;
+  }
+
+  .carousel-slide p {
+    font-size: 14px;
+    line-height: 1.45;
   }
 }
